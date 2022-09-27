@@ -87,12 +87,11 @@ install_necessary_package() {
 
 install_trojan_go() {
     link="https://github.com/p4gefau1t/trojan-go/releases/latest/download/trojan-go-linux-${ARCH}.zip"
-    mkdir -p "/usr/bin/trojan-go"
     mkdir -p "/etc/trojan-go"
     cd $(mktemp -d)
     curl -fsSL $link -o bin.zip
     unzip bin.zip && rm bin.zip
-    mv trojan-go /usr/bin/trojan-go/trojan-go && chmod +x /usr/bin/trojan-go/trojan-go
+    mv trojan-go /usr/bin/trojan-go && chmod +x /usr/bin/trojan-go
     mv geoip.dat /etc/trojan-go/geoip.dat
     mv geosite.dat /etc/trojan-go/geosite.dat
     mv example/trojan-go.service /etc/systemd/system/trojan-go.service
