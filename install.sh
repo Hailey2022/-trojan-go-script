@@ -1,7 +1,5 @@
 #!/bin/bash
 
-CONFIG_PATH='/usr/local/etc/trojan-go/'
-
 check_if_running_as_root() {
     if [[ "$UID" -ne '0' ]]; then
         echo "error: You must run this script as root!"
