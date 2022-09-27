@@ -99,11 +99,12 @@ install_trojan_go() {
     mv geosite.dat /etc/trojan-go/geosite.dat
     mv example/trojan-go.service /etc/systemd/system/trojan-go.service
     if [ ! -f "/etc/trojan-go/config.json" ]; then
-        mv example/sever.json /etc/trojan-go/config.json
+        mv example/server.json /etc/trojan-go/config.json
     fi
     systemctl daemon-reload
     systemctl reset-failed
     echo "trojan-go is installed."
+    echo "please edit /etc/trojan-go/config.json"
 }
 
 main() {
